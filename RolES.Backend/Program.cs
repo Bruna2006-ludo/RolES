@@ -1,3 +1,5 @@
+using RolES.Backend.DtoS;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
@@ -21,10 +23,14 @@ app.MapGet("/", () => // Metodo sem nome
          { Mensagem = "Servidor está online.", Data = dataResposta});
 });
 
+app.MapPost("/usuario", (cadastroUsuarioDto requestBody) =>
 
-app.MapPost("/usuario", () =>
 {
-    return Results.Created();
+    return Results.Ok(requestBody);
 });
 
 app.Run();
+
+public class cadastroUsuarioDto
+{
+}
