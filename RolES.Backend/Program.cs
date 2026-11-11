@@ -54,5 +54,16 @@ app.MapPost("/usuario", async (CadastroUsuarioDto requestBody, UsuarioServicos u
         return Results.InternalServerError();
     }
 });
+app.MapPost("/login", (LoginUsuarioDTO corpoRequisicao) =>
+{
+    try
+    {
+    
+    }
+    catch 
+    {
+        return Results.InternalServerError();
+    }
+}
 
 app.Run();
